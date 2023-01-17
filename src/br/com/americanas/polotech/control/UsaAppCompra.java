@@ -22,24 +22,23 @@ os produtos comprados são removidos do estoque e o dinheiro pago deve ser adici
 
 import br.com.americanas.polotech.model.BEAN.EstoqueMetodos;
 import br.com.americanas.polotech.model.entity.*;
-
-import java.util.Scanner;
+import br.com.americanas.polotech.view.MenuInicial;
 
 public class UsaAppCompra {
     public static void main(String[] args) {
-        EstoqueMetodos.inserirProduto(new Jogo("Zelda", 299.99,10,"Nintendo","Aventura", "Nintendo"));
-        EstoqueMetodos.inserirProduto(new Livro("Livro 1", 9.99,10,"Ficção","Escritor1","Editora1"));
-        EstoqueMetodos.inserirProduto(new Filme("Filme 1 o retorno", 25.00,10,"Warner Bros", "Diretor1", "Terror","Produtor1"));
-        EstoqueMetodos.inserirProduto(new Livro("Livro 2", 19.99,10,"Aventura","Escritor2","Editora1"));
-        EstoqueMetodos.inserirProduto(new Livro("Livro 3", 35.99,10,"Ação","Escritor3","Editora2"));
-        EstoqueMetodos.inserirProduto(new Jogo("Mario", 150.00,10,"Nintendo","Aventura", "Nintendo"));
-        EstoqueMetodos.inserirProduto(new Jogo("Overwatch", 890.00,10,"Microsoft","FPS", "Blizard"));
-        EstoqueMetodos.inserirProduto(new AlbumDeMusica("Musica1",0.50,100,"Compositor1","Pop","Sony"));
-        EstoqueMetodos.inserirProduto(new Filme("Filme 1", 25.00,10,"Warner Bros", "Diretor3", "Horror","Produtor2"));
-        EstoqueMetodos.inserirProduto(new AlbumDeMusica("Musica2",0.70,100,"Compositor1","Indie","Emi"));
-        EstoqueMetodos.inserirProduto(new Brinquedo("Barbie",400.00,2,"Boneco"));
+        EstoqueMetodos.inserirProduto(new Jogo("Zelda", 299.99, 10, "Nintendo", "Aventura", "Nintendo"));
+        EstoqueMetodos.inserirProduto(new Livro("Livro 1", 9.99, 10, "Ficção", "Escritor1", "Editora1"));
+        EstoqueMetodos.inserirProduto(new Filme("Filme 1 o retorno", 25.00, 10, "Warner Bros", "Diretor1", "Terror", "Produtor1"));
+        EstoqueMetodos.inserirProduto(new Livro("Livro 2", 19.99, 10, "Aventura", "Escritor2", "Editora1"));
+        EstoqueMetodos.inserirProduto(new Livro("Livro 3", 35.99, 10, "Ação", "Escritor3", "Editora2"));
+        EstoqueMetodos.inserirProduto(new Jogo("Mario", 150.00, 10, "Nintendo", "Aventura", "Nintendo"));
+        EstoqueMetodos.inserirProduto(new Jogo("Overwatch", 890.00, 10, "Microsoft", "FPS", "Blizard"));
+        EstoqueMetodos.inserirProduto(new AlbumDeMusica("Musica1", 0.50, 100, "Compositor1", "Pop", "Sony"));
+        EstoqueMetodos.inserirProduto(new Filme("Filme 1", 25.00, 10, "Warner Bros", "Diretor3", "Horror", "Produtor2"));
+        EstoqueMetodos.inserirProduto(new AlbumDeMusica("Musica2", 0.70, 100, "Compositor1", "Indie", "Emi"));
+        EstoqueMetodos.inserirProduto(new Brinquedo("Barbie", 400.00, 2, "Boneco"));
 
-        EstoqueMetodos.exibirTodos();
+        //EstoqueMetodos.exibirTodos();
 
         // deu certo
 //        boolean verifica = EstoqueMetodos.removerProduto(3);
@@ -53,20 +52,17 @@ public class UsaAppCompra {
 //        EstoqueMetodos.alterarProduto(5,new Livro("Machamdo de Assis",24.99, 10,"Romance","Dom Casmurro","EditoraTop"));
 //        EstoqueMetodos.exibirTodos();
 
+        boolean iniciar = true;
+        boolean validador = true;
 
-//        Scanner src = new Scanner(System.in);
-//        int escolha;
-//        boolean validador;
-//
-//        do {
-//            System.out.println("===========================");
-//            System.out.println("1. Login");
-//            System.out.println("2. Cadastrar");
-//            System.out.println("3. Sair");
-//            System.out.println("===========================");
-//            System.out.print("OPÇÃO ESCOLHIDA: ");
-//            escolha = src.nextInt();
-//        }while (escolha !=3);
-
+        while (validador != false) {
+            if (iniciar) {
+                iniciar = MenuInicial.menuInicial();
+                if (!iniciar) {
+                    System.out.println("Saindo da Livraria");
+                    validador = false;
+                }
+            }
+        }
     }
 }

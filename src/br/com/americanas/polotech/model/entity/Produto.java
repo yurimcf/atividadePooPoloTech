@@ -1,6 +1,6 @@
 package br.com.americanas.polotech.model.entity;
 
-public class Produto {
+public abstract class Produto {
     private static Integer uid = 1;
     private Integer id;
     private String nome;
