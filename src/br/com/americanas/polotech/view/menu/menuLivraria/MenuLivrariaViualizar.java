@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class MenuLivrariaViualizar {
 
-    public static boolean visualiarTipoDeProduto() {
+    public static boolean telaVisualizar() {
         Integer escolha;
         Scanner scr = new Scanner(System.in);
         boolean validador;
@@ -50,7 +50,6 @@ public class MenuLivrariaViualizar {
                     System.out.println("Escolha uma opção valida");
                     break;
             }
-
         }while (validador);
 
         return true;
