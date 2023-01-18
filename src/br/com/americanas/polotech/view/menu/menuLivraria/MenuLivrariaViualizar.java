@@ -1,19 +1,17 @@
 package br.com.americanas.polotech.view.menu.menuLivraria;
 
-import br.com.americanas.polotech.model.BEAN.EstoqueMetodos;
+import br.com.americanas.polotech.model.DAO.EstoqueMetodos;
 
 import java.util.Scanner;
 
-public class MenuLivrariaViualizarProdutos {
+public class MenuLivrariaViualizar {
 
     public static boolean visualiarTipoDeProduto() {
-        boolean continua = true;
         Integer escolha;
         Scanner scr = new Scanner(System.in);
         boolean validador;
         do {
             validador = true;
-            continua = true;
             System.out.println("================================");
             System.out.println("1. Visualizar Album de Musica");
             System.out.println("2. Visualizar Brinquedo");

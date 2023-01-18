@@ -4,12 +4,11 @@ import java.util.Scanner;
 
 public class MenuNavegarLivraria {
     public static boolean navegarLivratia() {
+        Scanner src = new Scanner(System.in);
         Integer escolha;
         boolean validador = true;
 
         do {
-            Scanner src = new Scanner(System.in);
-            escolha = null;
             System.out.println("================================");
             System.out.println("1. Adicionar Produto");
             System.out.println("2. Visualizar Produtos Disponiveis");
@@ -25,11 +24,12 @@ public class MenuNavegarLivraria {
                     validador = MenuLibrariaAdicionar.telaAdiconar();
                     break;
                 case 2:
-                    validador = MenuLivrariaViualizarProdutos.visualiarTipoDeProduto();
+                    validador = MenuLivrariaViualizar.visualiarTipoDeProduto();
                     break;
                 case 3:
                     break;
                 case 4:
+                    validador = MenuLivrariaAlterar.telaAlterar();
                     break;
                 case 5:
                     validador = false;
