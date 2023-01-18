@@ -20,7 +20,7 @@ Você deve ser capaz de realizar a operação de compra, ao realizar esta opera�
 os produtos comprados são removidos do estoque e o dinheiro pago deve ser adicionado ao caixa.
  */
 
-import br.com.americanas.polotech.model.BEAN.EstoqueMetodos;
+import br.com.americanas.polotech.model.DAO.EstoqueMetodos;
 import br.com.americanas.polotech.model.entity.*;
 import br.com.americanas.polotech.view.menu.MenuInicial;
 
