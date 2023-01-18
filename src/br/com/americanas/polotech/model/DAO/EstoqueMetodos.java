@@ -34,6 +34,16 @@ public class EstoqueMetodos {
         }
     }
 
+    public static Produto pesqItem(Integer id) {
+        juntaLista();
+        for (Produto prod : listEstoque) {
+            if (prod.getId() == id) {
+                return prod;
+            }
+        }
+        return null;
+    }
+
     // ta bom?
     public static void exibirTodos() {
         juntaLista();
@@ -44,29 +54,19 @@ public class EstoqueMetodos {
 
     public static void exibirTipo(Integer num) {
         if (num == 1) {
-            for (AlbumDeMusica albumDeMusica : listAlbumDeMusica) {
-                System.out.println(albumDeMusica);
-            }
+            listAlbumDeMusica.forEach(albumDeMusica -> System.out.println(albumDeMusica));
         }
         if (num == 2) {
-            for (Brinquedo brinquedo : listBrinquedos) {
-                System.out.println(brinquedo);
-            }
+            listBrinquedos.forEach(brinquedo -> System.out.println(brinquedo));
         }
         if (num == 3) {
-            for (Filme filme : listFilmes) {
-                System.out.println(filme);
-            }
+            listFilmes.forEach(filme -> System.out.println(filme));
         }
         if (num == 4) {
-            for (Jogo jogo : listJogos) {
-                System.out.println(jogo);
-            }
+            listJogos.forEach(jogo -> System.out.println(jogo));
         }
         if (num == 5) {
-            for (Livro livro : listLivros) {
-                System.out.println(livro);
-            }
+            listLivros.forEach(livro -> System.out.println(livro));
         }
     }
 
@@ -103,35 +103,14 @@ public class EstoqueMetodos {
         return false;
     }
 
-    // alterar
-    public static void alterarProduto(int id, Produto item) {
-        juntaLista();
-        if (id != -1) {
-            for (Produto produto : listEstoque) {
-                if (produto.getId() == id) {
-                    if (produto instanceof Livro) {
-                        Livro itemRef = (Livro) item;
-                        produto.setId(id);
-                        produto.setNome(itemRef.getNome());
-                        produto.setPreco(itemRef.getPreco());
-                        produto.setQtdItens(itemRef.getQtdItens());
-                        ((Livro) produto).setGenero(itemRef.getGenero());
-                        ((Livro) produto).setEscritor(itemRef.getEscritor());
-                        ((Livro) produto).setEditoda(itemRef.getEditoda());
-                    }
-                }
-            }
-        }
-    }
-
     public static boolean alterarProduto(int id, Double valor) {
         juntaLista();
         if (id != -1) {
-            for (Produto prod : listEstoque) {
-                if (prod.getId() == id) {
-                    prod.setPreco(valor);
+            listEstoque.forEach(produto -> {
+                if (produto.getId() == id) {
+                    produto.setPreco(valor);
                 }
-            }
+            });
         }
         return true;
     }
@@ -139,11 +118,11 @@ public class EstoqueMetodos {
     public static boolean alterarProduto(int id, Integer qtd) {
         juntaLista();
         if (id != -1) {
-            for (Produto prod : listEstoque) {
-                if (prod.getId() == id) {
-                    prod.setQtdItens(qtd);
+            listEstoque.forEach(produto -> {
+                if (produto.getId() == id) {
+                    produto.setQtdItens(qtd);
                 }
-            }
+            });
         }
         return true;
     }
