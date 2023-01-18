@@ -1,6 +1,6 @@
 package br.com.americanas.polotech.view.menu.menuLivraria;
 
-import br.com.americanas.polotech.model.DAO.EstoqueMetodos;
+import br.com.americanas.polotech.model.DAO.EstoqueDAO;
 import br.com.americanas.polotech.model.entity.*;
 
 import java.util.Scanner;
@@ -46,7 +46,7 @@ public class MenuLibrariaAdicionar {
                         System.out.println("================================");
 
                         AlbumDeMusica albumDeMusica = new AlbumDeMusica(nome, preco, qtdItem, compositor, genero, selos);
-                        EstoqueMetodos.inserirProduto(albumDeMusica);
+                        EstoqueDAO.inserirProduto(albumDeMusica);
                         System.out.println("Adicionar outra muscia? [S/N]");
                         String resp = scr.nextLine();
                         if (resp.equalsIgnoreCase("n")) {
@@ -70,7 +70,7 @@ public class MenuLibrariaAdicionar {
                         System.out.println("================================");
 
                         Brinquedo brinquedo = new Brinquedo(nome, preco, qtdItem, tipo);
-                        EstoqueMetodos.inserirProduto(brinquedo);
+                        EstoqueDAO.inserirProduto(brinquedo);
                         System.out.println("Adicionar outro Brinquedo? [S/N]");
                         String resp = scr.nextLine();
                         if (resp.equalsIgnoreCase("n")) {
@@ -100,7 +100,7 @@ public class MenuLibrariaAdicionar {
                         System.out.println("================================");
 
                         Filme filme = new Filme(nome,preco,qtdItem,estudio,diretor,genero,produtor);
-                        EstoqueMetodos.inserirProduto(filme);
+                        EstoqueDAO.inserirProduto(filme);
                         System.out.println("Adicionar outro Filme? [S/N]");
                         String resp = scr.nextLine();
                         if (resp.equalsIgnoreCase("n")) {
@@ -128,7 +128,7 @@ public class MenuLibrariaAdicionar {
                         System.out.println("================================");
 
                         Jogo jogo = new Jogo(nome,preco,qtdItem,distribuidora,genero,estudio);
-                        EstoqueMetodos.inserirProduto(jogo);
+                        EstoqueDAO.inserirProduto(jogo);
                         System.out.println("Adicionar outro Jogo? [S/N]");
                         String resp = scr.nextLine();
                         if (resp.equalsIgnoreCase("n")) {
@@ -156,7 +156,7 @@ public class MenuLibrariaAdicionar {
                         System.out.println("================================");
 
                         Livro livro = new Livro(nome,preco,qtdItem,genero,escritor,editoda);
-                        EstoqueMetodos.inserirProduto(livro);
+                        EstoqueDAO.inserirProduto(livro);
                         System.out.println("Adicionar outro Livro? [S/N]");
                         String resp = scr.nextLine();
                         if (resp.equalsIgnoreCase("n")) {

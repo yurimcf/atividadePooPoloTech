@@ -1,6 +1,6 @@
 package br.com.americanas.polotech.view.menu.menuLivraria;
 
-import br.com.americanas.polotech.model.DAO.EstoqueMetodos;
+import br.com.americanas.polotech.model.DAO.EstoqueDAO;
 import br.com.americanas.polotech.model.entity.Produto;
 
 import java.util.Scanner;
@@ -25,7 +25,7 @@ public class MenuLivrariaAlterar {
                 case 1:
                     System.out.println("Forneça o ID do produto");
                     id = src.nextInt();
-                    idPesq = EstoqueMetodos.pesqItem(id);
+                    idPesq = EstoqueDAO.pesqItem(id);
                     if (idPesq != null) {
                         System.out.println(idPesq);
                     }
@@ -33,19 +33,19 @@ public class MenuLivrariaAlterar {
                     src.nextLine();
                     Double valor = Double.parseDouble(src.nextLine());
 
-                    EstoqueMetodos.alterarProduto(id, valor);
+                    EstoqueDAO.alterarProduto(id, valor);
                     break;
                 case 2:
                     System.out.println("Forneça o ID do produto");
                     id = src.nextInt();
-                    idPesq = EstoqueMetodos.pesqItem(id);
+                    idPesq = EstoqueDAO.pesqItem(id);
                     if (idPesq != null) {
                         System.out.println(idPesq);
                     }
                     System.out.println("Digite a nova quantidade");
                     Integer qtd = src.nextInt();
 
-                    EstoqueMetodos.alterarProduto(id, qtd);
+                    EstoqueDAO.alterarProduto(id, qtd);
                     break;
                 case 3:
                     validador = false;

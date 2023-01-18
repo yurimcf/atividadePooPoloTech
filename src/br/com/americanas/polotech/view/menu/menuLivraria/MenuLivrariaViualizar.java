@@ -1,6 +1,6 @@
 package br.com.americanas.polotech.view.menu.menuLivraria;
 
-import br.com.americanas.polotech.model.DAO.EstoqueMetodos;
+import br.com.americanas.polotech.model.DAO.EstoqueDAO;
 
 import java.util.Scanner;
 
@@ -26,22 +26,22 @@ public class MenuLivrariaViualizar {
 
             switch (escolha){
                 case 1:
-                    EstoqueMetodos.exibirTipo(1);
+                    EstoqueDAO.exibirTipo(1);
                     break;
                 case 2:
-                    EstoqueMetodos.exibirTipo(2);
+                    EstoqueDAO.exibirTipo(2);
                     break;
                 case 3:
-                    EstoqueMetodos.exibirTipo(3);
+                    EstoqueDAO.exibirTipo(3);
                     break;
                 case 4:
-                    EstoqueMetodos.exibirTipo(4);
+                    EstoqueDAO.exibirTipo(4);
                     break;
                 case 5:
-                    EstoqueMetodos.exibirTipo(5);
+                    EstoqueDAO.exibirTipo(5);
                     break;
                 case 6:
-                    EstoqueMetodos.exibirTodos();
+                    EstoqueDAO.exibirTodos();
                     break;
                 case 7:
                     validador = false;

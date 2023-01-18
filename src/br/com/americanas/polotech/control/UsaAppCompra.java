@@ -20,38 +20,23 @@ Você deve ser capaz de realizar a operação de compra, ao realizar esta opera�
 os produtos comprados são removidos do estoque e o dinheiro pago deve ser adicionado ao caixa.
  */
 
-import br.com.americanas.polotech.model.DAO.EstoqueMetodos;
+import br.com.americanas.polotech.model.DAO.EstoqueDAO;
 import br.com.americanas.polotech.model.entity.*;
 import br.com.americanas.polotech.view.menu.MenuInicial;
 
 public class UsaAppCompra {
     public static void main(String[] args) {
-        EstoqueMetodos.inserirProduto(new Jogo("GOD:Ragnarok", 299.99, 3, "Sony", "Ação e Aventura", "Santa Monica"));
-        EstoqueMetodos.inserirProduto(new Livro("As Cronicas de Narnia", 55.0, 5, "Aventura", "Escritor0", "Editora9"));
-        EstoqueMetodos.inserirProduto(new Filme("Tin tin", 24.99, 6, "Warner Bros", "Diretor1", "Ação e Aventura", "Produtor1"));
-        EstoqueMetodos.inserirProduto(new Livro("Bulsola de Ouro", 39.99, 3, "Aventura", "Escritor2", "Editora1"));
-        EstoqueMetodos.inserirProduto(new Livro("Código Limpo", 99.99, 2, "Universitário", "Robert Cecil Martin", "Alta Books"));
-        EstoqueMetodos.inserirProduto(new Jogo("Red Dead Redemption 2", 239.99, 3, "Sony", "Ação e Aventura", "RockStar"));
-        EstoqueMetodos.inserirProduto(new Jogo("God Of War", 69.99, 5, "Sony", "Ação e Aventura", "Santa Monica"));
-        EstoqueMetodos.inserirProduto(new AlbumDeMusica("Special", 16.50, 5, "Lizzo", "Hip hop", "Sony"));
-        EstoqueMetodos.inserirProduto(new Filme("Filme 1", 25.00, 10, "Warner Bros", "Diretor3", "Horror", "Produtor2"));
-        EstoqueMetodos.inserirProduto(new AlbumDeMusica("Harry's House", 15.50, 5, "Harry Styles", "Funk pop", "Columbia"));
-        EstoqueMetodos.inserirProduto(new Brinquedo("Barbie", 400.00, 2, "Boneco"));
-
-
-        //EstoqueMetodos.exibirTodos();
-
-        // deu certo
-//        boolean verifica = EstoqueMetodos.removerProduto(3);
-//        if (verifica =! false) {
-//            System.out.println("Produto Excluido");
-//        } else {
-//            System.out.println("Erro ao excluir");
-//        }
-
-        //acho que funciona ok
-//        EstoqueMetodos.alterarProduto(5,new Livro("Machamdo de Assis",24.99, 10,"Romance","Dom Casmurro","EditoraTop"));
-//        EstoqueMetodos.exibirTodos();
+        EstoqueDAO.inserirProduto(new Jogo("GOD:Ragnarok", 299.99, 3, "Sony", "Ação e Aventura", "Santa Monica"));
+        EstoqueDAO.inserirProduto(new Livro("As Cronicas de Narnia", 55.0, 5, "Aventura", "Escritor0", "Editora9"));
+        EstoqueDAO.inserirProduto(new Filme("Tin tin", 24.99, 6, "Warner Bros", "Diretor1", "Ação e Aventura", "Produtor1"));
+        EstoqueDAO.inserirProduto(new Livro("Bulsola de Ouro", 39.99, 3, "Aventura", "Escritor2", "Editora1"));
+        EstoqueDAO.inserirProduto(new Livro("Código Limpo", 99.99, 2, "Universitário", "Robert Cecil Martin", "Alta Books"));
+        EstoqueDAO.inserirProduto(new Jogo("Red Dead Redemption 2", 239.99, 3, "Sony", "Ação e Aventura", "RockStar"));
+        EstoqueDAO.inserirProduto(new Jogo("God Of War", 69.99, 5, "Sony", "Ação e Aventura", "Santa Monica"));
+        EstoqueDAO.inserirProduto(new AlbumDeMusica("Special", 16.50, 5, "Lizzo", "Hip hop", "Sony"));
+        EstoqueDAO.inserirProduto(new Filme("Filme 1", 25.00, 10, "Warner Bros", "Diretor3", "Horror", "Produtor2"));
+        EstoqueDAO.inserirProduto(new AlbumDeMusica("Harry's House", 15.50, 5, "Harry Styles", "Funk pop", "Columbia"));
+        EstoqueDAO.inserirProduto(new Brinquedo("Barbie", 400.00, 2, "Boneco"));
 
         boolean iniciar = true;
         boolean validador = true;
@@ -65,6 +50,6 @@ public class UsaAppCompra {
                 }
             }
         }
-        EstoqueMetodos.exibirTodos();
+        EstoqueDAO.exibirTodos();
     }
 }

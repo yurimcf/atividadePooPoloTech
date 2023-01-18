@@ -1,6 +1,6 @@
 package br.com.americanas.polotech.view.menu.menuLivraria;
 
-import br.com.americanas.polotech.model.DAO.EstoqueMetodos;
+import br.com.americanas.polotech.model.DAO.EstoqueDAO;
 import br.com.americanas.polotech.model.entity.Produto;
 
 import java.util.Scanner;
@@ -15,7 +15,7 @@ public class MenuLivrariaExcluir {
             System.out.println("================================");
             System.out.println("Forneça o ID do produto para Excluir");
             Integer id = scr.nextInt();
-            Produto idPesq = EstoqueMetodos.pesqItem(id);
+            Produto idPesq = EstoqueDAO.pesqItem(id);
             if (idPesq != null) {
                 System.out.println(idPesq);
             }
@@ -24,7 +24,7 @@ public class MenuLivrariaExcluir {
             System.out.println("Este é o item que deseja Excluir? [S/N]");
             String escola = scr.nextLine();
             if (escola.equalsIgnoreCase("S")) {
-                EstoqueMetodos.removerProduto(id);
+                EstoqueDAO.removerProduto(id);
                 System.out.println("Produto Removido com Sucesso");
             }
             System.out.println("================================");
