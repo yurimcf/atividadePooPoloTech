@@ -1,4 +1,4 @@
-package br.com.americanas.polotech.model.BEAN;
+package br.com.americanas.polotech.model.DAO;
 
 import br.com.americanas.polotech.model.entity.*;
 
@@ -42,6 +42,34 @@ public class EstoqueMetodos {
         }
     }
 
+    public static void exibirTipo(Integer num) {
+        if (num == 1) {
+            for (AlbumDeMusica albumDeMusica : listAlbumDeMusica) {
+                System.out.println(albumDeMusica);
+            }
+        }
+        if (num == 2) {
+            for (Brinquedo brinquedo : listBrinquedos) {
+                System.out.println(brinquedo);
+            }
+        }
+        if (num == 3) {
+            for (Filme filme : listFilmes) {
+                System.out.println(filme);
+            }
+        }
+        if (num == 4) {
+            for (Jogo jogo : listJogos) {
+                System.out.println(jogo);
+            }
+        }
+        if (num == 5) {
+            for (Livro livro : listLivros) {
+                System.out.println(livro);
+            }
+        }
+    }
+
     private static void juntaLista() {
         listEstoque = new ArrayList<>();
         Stream.of(listAlbumDeMusica, listBrinquedos, listFilmes, listJogos, listLivros)
@@ -75,6 +103,7 @@ public class EstoqueMetodos {
         return false;
     }
 
+    // alterar
     public static void alterarProduto(int id, Produto item) {
         juntaLista();
         if (id != -1) {
@@ -93,5 +122,29 @@ public class EstoqueMetodos {
                 }
             }
         }
+    }
+
+    public static boolean alterarProduto(int id, Double valor) {
+        juntaLista();
+        if (id != -1) {
+            for (Produto prod : listEstoque) {
+                if (prod.getId() == id) {
+                    prod.setPreco(valor);
+                }
+            }
+        }
+        return true;
+    }
+
+    public static boolean alterarProduto(int id, Integer qtd) {
+        juntaLista();
+        if (id != -1) {
+            for (Produto prod : listEstoque) {
+                if (prod.getId() == id) {
+                    prod.setQtdItens(qtd);
+                }
+            }
+        }
+        return true;
     }
 }
