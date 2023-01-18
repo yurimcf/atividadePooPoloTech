@@ -1,7 +1,7 @@
 package br.com.americanas.polotech.view.menu.menuLivraria;
 
 import br.com.americanas.polotech.model.BEAN.EstoqueMetodos;
-import br.com.americanas.polotech.model.entity.AlbumDeMusica;
+import br.com.americanas.polotech.model.entity.*;
 
 import java.util.Scanner;
 
@@ -13,6 +13,7 @@ public class MenuLibrariaAdicionar {
         boolean validador;
         do {
             validador = true;
+            continua = true;
             System.out.println("================================");
             System.out.println("1. Adicionar Album de Musica");
             System.out.println("2. Adicionar Brinquedo");
@@ -31,20 +32,15 @@ public class MenuLibrariaAdicionar {
                         scr.nextLine();
                         System.out.println("Nome do Album?");
                         String nome = scr.nextLine();
-
                         System.out.println("Preço");
                         Double preco = Double.parseDouble(scr.nextLine());
-
-                        System.out.println("Quantidade comprada");
+                        System.out.println("Quantidade no Estoque");
                         Integer qtdItem = scr.nextInt();
-
                         System.out.println("Compositor");
                         scr.nextLine();
                         String compositor = scr.nextLine();
-
                         System.out.println("Genero");
                         String genero = scr.nextLine();
-
                         System.out.println("Selos");
                         String selos = scr.nextLine();
                         System.out.println("================================");
@@ -59,12 +55,114 @@ public class MenuLibrariaAdicionar {
                     }
                     break;
                 case 2:
+                    while (continua) {
+                        System.out.println("================================");
+                        scr.nextLine();
+                        System.out.println("Nome do Brinquedo?");
+                        String nome = scr.nextLine();
+                        System.out.println("Preço");
+                        Double preco = Double.parseDouble(scr.nextLine());
+                        System.out.println("Quantidade no Estoque");
+                        Integer qtdItem = scr.nextInt();
+                        System.out.println("Tipo");
+                        scr.nextLine();
+                        String tipo = scr.nextLine();
+                        System.out.println("================================");
+
+                        Brinquedo brinquedo = new Brinquedo(nome, preco, qtdItem, tipo);
+                        EstoqueMetodos.inserirProduto(brinquedo);
+                        System.out.println("Adicionar outro Brinquedo? [S/N]");
+                        String resp = scr.nextLine();
+                        if (resp.equalsIgnoreCase("n")) {
+                            continua = false;
+                        }
+                    }
                     break;
                 case 3:
+                    while (continua) {
+                        System.out.println("================================");
+                        scr.nextLine();
+                        System.out.println("Nome do Filme?");
+                        String nome = scr.nextLine();
+                        System.out.println("Preço");
+                        Double preco = Double.parseDouble(scr.nextLine());
+                        System.out.println("Quantidade no Estoque");
+                        Integer qtdItem = scr.nextInt();
+                        System.out.println("Estudio");
+                        scr.nextLine();
+                        String estudio = scr.nextLine();
+                        System.out.println("Diretor");
+                        String diretor = scr.nextLine();
+                        System.out.println("Gênero");
+                        String genero = scr.nextLine();
+                        System.out.println("Produtor");
+                        String produtor = scr.nextLine();
+                        System.out.println("================================");
+
+                        Filme filme = new Filme(nome,preco,qtdItem,estudio,diretor,genero,produtor);
+                        EstoqueMetodos.inserirProduto(filme);
+                        System.out.println("Adicionar outro Filme? [S/N]");
+                        String resp = scr.nextLine();
+                        if (resp.equalsIgnoreCase("n")) {
+                            continua = false;
+                        }
+                    }
                     break;
                 case 4:
+                    while (continua) {
+                        System.out.println("================================");
+                        scr.nextLine();
+                        System.out.println("Nome do Jogo?");
+                        String nome = scr.nextLine();
+                        System.out.println("Preço");
+                        Double preco = Double.parseDouble(scr.nextLine());
+                        System.out.println("Quantidade no Estoque");
+                        Integer qtdItem = scr.nextInt();
+                        System.out.println("Distribuidora");
+                        scr.nextLine();
+                        String distribuidora = scr.nextLine();
+                        System.out.println("Gênero");
+                        String genero = scr.nextLine();
+                        System.out.println("Estudio");
+                        String estudio = scr.nextLine();
+                        System.out.println("================================");
+
+                        Jogo jogo = new Jogo(nome,preco,qtdItem,distribuidora,genero,estudio);
+                        EstoqueMetodos.inserirProduto(jogo);
+                        System.out.println("Adicionar outro Jogo? [S/N]");
+                        String resp = scr.nextLine();
+                        if (resp.equalsIgnoreCase("n")) {
+                            continua = false;
+                        }
+                    }
                     break;
                 case 5:
+                    while (continua) {
+                        System.out.println("================================");
+                        scr.nextLine();
+                        System.out.println("Nome do Livro?");
+                        String nome = scr.nextLine();
+                        System.out.println("Preço");
+                        Double preco = Double.parseDouble(scr.nextLine());
+                        System.out.println("Quantidade no Estoque");
+                        Integer qtdItem = scr.nextInt();
+                        System.out.println("Escritor");
+                        scr.nextLine();
+                        String escritor = scr.nextLine();
+                        System.out.println("Gênero");
+                        String genero = scr.nextLine();
+                        System.out.println("Editoda");
+                        String editoda = scr.nextLine();
+                        System.out.println("================================");
+
+                        Livro livro = new Livro(nome,preco,qtdItem,genero,escritor,editoda);
+                        EstoqueMetodos.inserirProduto(livro);
+                        System.out.println("Adicionar outro Livro? [S/N]");
+                        String resp = scr.nextLine();
+                        if (resp.equalsIgnoreCase("n")) {
+                            continua = false;
+                        }
+                    }
                     break;
                 case 6:
                     validador = false;

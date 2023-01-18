@@ -1,14 +1,15 @@
-package br.com.americanas.polotech.view;
+package br.com.americanas.polotech.view.menu.menuLivraria;
 
 import java.util.Scanner;
 
 public class MenuNavegarLivraria {
     public static boolean navegarLivratia() {
-        Scanner src = new Scanner(System.in);
         Integer escolha;
         boolean validador = true;
 
-        do{
+        do {
+            Scanner src = new Scanner(System.in);
+            escolha = null;
             System.out.println("================================");
             System.out.println("1. Adicionar Produto");
             System.out.println("2. Visualizar Produtos Disponiveis");
@@ -21,6 +22,7 @@ public class MenuNavegarLivraria {
 
             switch (escolha) {
                 case 1:
+                    validador = MenuLibrariaAdicionar.telaAdiconar();
                     break;
                 case 2:
                     break;
@@ -34,7 +36,7 @@ public class MenuNavegarLivraria {
                 default:
                     System.out.println("Escolha um Número de 1 a 5");
             }
-        } while(validador);
+        } while (validador);
         return true;
     }
 }

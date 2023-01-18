@@ -1,4 +1,6 @@
-package br.com.americanas.polotech.view;
+package br.com.americanas.polotech.view.menu;
+
+import br.com.americanas.polotech.view.menu.menuLivraria.MenuNavegarLivraria;
 
 import java.util.Scanner;
 

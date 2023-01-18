@@ -1,4 +1,4 @@
-package br.com.americanas.polotech.view;
+package br.com.americanas.polotech.view.menu;
 
 public class MenuNavegarCaixa {
     public static boolean menuCaixa() {
