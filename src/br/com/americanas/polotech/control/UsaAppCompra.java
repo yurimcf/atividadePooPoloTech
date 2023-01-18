@@ -22,21 +22,22 @@ os produtos comprados são removidos do estoque e o dinheiro pago deve ser adici
 
 import br.com.americanas.polotech.model.BEAN.EstoqueMetodos;
 import br.com.americanas.polotech.model.entity.*;
-import br.com.americanas.polotech.view.MenuInicial;
+import br.com.americanas.polotech.view.menu.MenuInicial;
 
 public class UsaAppCompra {
     public static void main(String[] args) {
-        EstoqueMetodos.inserirProduto(new Jogo("Zelda", 299.99, 10, "Nintendo", "Aventura", "Nintendo"));
-        EstoqueMetodos.inserirProduto(new Livro("Livro 1", 9.99, 10, "Ficção", "Escritor1", "Editora1"));
-        EstoqueMetodos.inserirProduto(new Filme("Filme 1 o retorno", 25.00, 10, "Warner Bros", "Diretor1", "Terror", "Produtor1"));
-        EstoqueMetodos.inserirProduto(new Livro("Livro 2", 19.99, 10, "Aventura", "Escritor2", "Editora1"));
-        EstoqueMetodos.inserirProduto(new Livro("Livro 3", 35.99, 10, "Ação", "Escritor3", "Editora2"));
-        EstoqueMetodos.inserirProduto(new Jogo("Mario", 150.00, 10, "Nintendo", "Aventura", "Nintendo"));
-        EstoqueMetodos.inserirProduto(new Jogo("Overwatch", 890.00, 10, "Microsoft", "FPS", "Blizard"));
-        EstoqueMetodos.inserirProduto(new AlbumDeMusica("Musica1", 0.50, 100, "Compositor1", "Pop", "Sony"));
+        EstoqueMetodos.inserirProduto(new Jogo("GOD:Ragnarok", 299.99, 3, "Sony", "Ação e Aventura", "Santa Monica"));
+        EstoqueMetodos.inserirProduto(new Livro("As Cronicas de Narnia", 55.0, 5, "Aventura", "Escritor0", "Editora9"));
+        EstoqueMetodos.inserirProduto(new Filme("Tin tin", 24.99, 6, "Warner Bros", "Diretor1", "Ação e Aventura", "Produtor1"));
+        EstoqueMetodos.inserirProduto(new Livro("Bulsola de Ouro", 39.99, 3, "Aventura", "Escritor2", "Editora1"));
+        EstoqueMetodos.inserirProduto(new Livro("Código Limpo", 99.99, 2, "Universitário", "Robert Cecil Martin", "Alta Books"));
+        EstoqueMetodos.inserirProduto(new Jogo("Red Dead Redemption 2", 239.99, 3, "Sony", "Ação e Aventura", "RockStar"));
+        EstoqueMetodos.inserirProduto(new Jogo("God Of War", 69.99, 5, "Sony", "Ação e Aventura", "Santa Monica"));
+        EstoqueMetodos.inserirProduto(new AlbumDeMusica("Special", 16.50, 5, "Lizzo", "Hip hop", "Sony"));
         EstoqueMetodos.inserirProduto(new Filme("Filme 1", 25.00, 10, "Warner Bros", "Diretor3", "Horror", "Produtor2"));
-        EstoqueMetodos.inserirProduto(new AlbumDeMusica("Musica2", 0.70, 100, "Compositor1", "Indie", "Emi"));
+        EstoqueMetodos.inserirProduto(new AlbumDeMusica("Harry's House", 15.50, 5, "Harry Styles", "Funk pop", "Columbia"));
         EstoqueMetodos.inserirProduto(new Brinquedo("Barbie", 400.00, 2, "Boneco"));
+
 
         //EstoqueMetodos.exibirTodos();
 
@@ -64,5 +65,6 @@ public class UsaAppCompra {
                 }
             }
         }
+        EstoqueMetodos.exibirTodos();
     }
 }
