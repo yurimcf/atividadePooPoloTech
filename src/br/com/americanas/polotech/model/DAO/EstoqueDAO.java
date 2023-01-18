@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
-public class EstoqueMetodos {
+public class EstoqueDAO {
     private static final List<Produto> carrinho = new ArrayList<>();
     private static final List<AlbumDeMusica> listAlbumDeMusica = new ArrayList<>();
     private static final List<Brinquedo> listBrinquedos = new ArrayList<>();
