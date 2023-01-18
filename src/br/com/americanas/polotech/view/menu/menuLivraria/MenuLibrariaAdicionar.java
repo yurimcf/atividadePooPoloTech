@@ -1,6 +1,6 @@
 package br.com.americanas.polotech.view.menu.menuLivraria;
 
-import br.com.americanas.polotech.model.BEAN.EstoqueMetodos;
+import br.com.americanas.polotech.model.DAO.EstoqueMetodos;
 import br.com.americanas.polotech.model.entity.*;
 
 import java.util.Scanner;
