@@ -25,6 +25,7 @@ public class MenuNavegarLivraria {
                     validador = MenuLibrariaAdicionar.telaAdiconar();
                     break;
                 case 2:
+                    validador = MenuLivrariaViualizarProdutos.visualiarTipoDeProduto();
                     break;
                 case 3:
                     break;
