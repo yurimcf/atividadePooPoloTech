@@ -20,7 +20,7 @@ public class MenuCaixaExcluir {
             System.out.print("OPÇÃO ESCOLHIDA: ");
             escolha = sc.nextInt();
 
-            CaixaDAO.exibirCarrinho();
+            CaixaDAO.impressaoPrevia();
             Integer idPesq;
             switch (escolha) {
                 case 1:
@@ -38,7 +38,7 @@ public class MenuCaixaExcluir {
                     idPesq = sc.nextInt();
                     resp = CaixaDAO.removerTodos(idPesq);
                     if (resp == true) {
-                        System.out.println("Um item Removido");
+                        System.out.println("Todos os itens removidos");
                     } else {
                         System.out.println("Produto não encontrado");
                     }
@@ -51,5 +51,6 @@ public class MenuCaixaExcluir {
                     break;
             }
         }while(continua);
+
     }
 }
