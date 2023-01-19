@@ -11,6 +11,7 @@ public class MenuCaixaAdicionar {
         boolean continua = true;
         do {
             Scanner sc = new Scanner(System.in);
+            System.out.println("================================");
             System.out.println("Forneça o Código do Produto");
             Integer idProd = sc.nextInt();
 
@@ -23,11 +24,17 @@ public class MenuCaixaAdicionar {
             System.out.println("================================");
             sc.nextLine();
             System.out.println("Adicionar ao Carrinho? [S/N]");
-
             String resp = sc.nextLine();
             if (resp.equalsIgnoreCase("s")) {
                 CaixaDAO.adicionarNoCarrinho(prodPesq);
             }
+            System.out.println("================================");
+            System.out.println("Procurar outro Produto? [S/N]");
+            String resp2 = sc.nextLine();
+            if (resp2.equalsIgnoreCase("n")) {
+                continua = false;
+            }
+
         } while (continua);
         return true;
     }
