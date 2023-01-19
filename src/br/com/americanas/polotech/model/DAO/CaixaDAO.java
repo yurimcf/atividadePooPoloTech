@@ -2,66 +2,87 @@ package br.com.americanas.polotech.model.DAO;
 
 import br.com.americanas.polotech.model.entity.*;
 
-import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
-import java.util.stream.Collectors;
+import java.util.HashMap;
+import java.util.Map;
 
 public class CaixaDAO {
     private static Double saldoEmCaixa = 0.00;
-    private static List<Produto> carrinho = new CopyOnWriteArrayList();
 
     public static Double getSaldoEmCaixa() {
         return saldoEmCaixa;
     }
 
-    public static void adicionarNoCarrinho(Produto produto) {
-        Produto a = new Produto(
-                produto.getId(),
-                produto.getNome(),
-                produto.getPreco(),
-                1
-        );
-        if (carrinho.isEmpty()) {
-            carrinho.add(a);
-        } else {
-            for (Produto prod : carrinho) {
-                if (prod.getId() == a.getId()) {
-                    prod.setQtdItens(prod.getQtdItens() + 1);
-                    break;
-                } else if (prod.getId() == a.getId() && prod.getNome().equalsIgnoreCase(a.getNome())) {
-                    carrinho.add(a);
-                }
-            }
-        }
-        exibirCarrinho();
-    }
+    private static Map<Integer, Produto> carrinhoTemp = new HashMap<>();
 
-    private static void analisarItem(Produto produto) {
-        for (Produto prod : carrinho) {
-            if (prod.getId() == produto.getId()) {
-                prod.setQtdItens(prod.getQtdItens() + 1);
+    public static void adicionarNoCarrinho(Produto produto) {
+        Produto carrinho = verificaTipo(produto);
+        Produto prodRef = carrinhoTemp.get(produto.getId());
+        if (prodRef == null) {
+            carrinhoTemp.put(produto.getId(), carrinho);
+        } else {
+            if (prodRef.getQtdItens() == produto.getQtdItens()) {
+                System.out.println("================================");
+                System.out.println("Não pode adicionar mais Itens");
+            }else {
+                prodRef.setQtdItens(prodRef.getQtdItens() + 1);
             }
         }
+        impressaoPrevia();
     }
 
     public static void exibirCarrinho() {
-        carrinho.forEach(produto -> System.out.println(produto));
+        carrinhoTemp.forEach((integer, produto) -> System.out.println(produto.imprimir()));
+    }
+
+    public static void impressaoPrevia() {
+        carrinhoTemp.forEach((integer, produto) -> System.out.println(produto.imprimir()));
     }
 
     public static boolean removerUmItem(Integer id) {
-        carrinho.stream().filter(produto -> produto.getId() == id)
-                .forEach(produto -> carrinho.remove(produto));
+        Produto pesq = carrinhoTemp.get(id);
+        if (pesq != null) {
+            if (pesq.getQtdItens() > 0) {
+                pesq.setQtdItens(pesq.getQtdItens() - 1);
+            }
+            if (pesq.getQtdItens() == 0) {
+                carrinhoTemp.remove(pesq.getId(), pesq);
+            }
+        }
         return true;
     }
+
     public static boolean removerTodos(Integer id) {
-        List<Produto> removeAll =
-        carrinho.stream().filter(produto -> produto.getId() == id).
-                collect(Collectors.toList());
-        carrinho.removeAll(removeAll);
+        carrinhoTemp.remove(id);
         return true;
     }
 
     public static void calculaSaldo(Double valor) {
         saldoEmCaixa += valor;
+    }
+
+
+    private static Produto verificaTipo(Produto produto) {
+        Produto temp = null;
+        if (produto instanceof AlbumDeMusica) {
+            temp = new AlbumDeMusica(produto.getId(),
+                    produto.getNome(), produto.getPreco(),1);
+        }
+        if (produto instanceof Brinquedo) {
+            temp = new Brinquedo(produto.getId(),
+                    produto.getNome(), produto.getPreco(),1);
+        }
+        if (produto instanceof Filme) {
+            temp = new Filme(produto.getId(),
+                    produto.getNome(), produto.getPreco(),1);
+        }
+        if (produto instanceof Jogo) {
+            temp = new Jogo(produto.getId(),
+                    produto.getNome(), produto.getPreco(),1);
+        }
+        if (produto instanceof Livro) {
+            temp = new Livro(produto.getId(),
+                    produto.getNome(), produto.getPreco(),1);
+        }
+        return temp;
     }
 }
