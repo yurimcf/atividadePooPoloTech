@@ -12,6 +12,10 @@ public class Livro extends Produto {
         this.editoda = editoda;
     }
 
+    public Livro(Integer id, String nome, Double preco, Integer qtdItens) {
+        super(id, nome, preco, qtdItens);
+    }
+
     public String getGenero() {
         return genero;
     }

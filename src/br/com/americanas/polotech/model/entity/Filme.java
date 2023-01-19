@@ -14,6 +14,10 @@ public class Filme extends Produto{
         this.produtor = produtor;
     }
 
+    public Filme(Integer id, String nome, Double preco, Integer qtdItens) {
+        super(id, nome, preco, qtdItens);
+    }
+
     public String getEstudio() {
         return estudio;
     }

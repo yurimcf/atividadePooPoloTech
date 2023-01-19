@@ -12,6 +12,10 @@ public class AlbumDeMusica extends Produto{
         this.selos = selos;
     }
 
+    public AlbumDeMusica(Integer id, String nome, Double preco, Integer qtdItens) {
+        super(id, nome, preco, qtdItens);
+    }
+
     public String getCompositor() {
         return compositor;
     }

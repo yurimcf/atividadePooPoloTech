@@ -12,6 +12,10 @@ public class Jogo extends Produto {
         this.estudio = estudio;
     }
 
+    public Jogo(Integer id, String nome, Double preco, Integer qtdItens) {
+        super(id, nome, preco, qtdItens);
+    }
+
     public String getDistribuidora() {
         return distribuidora;
     }

@@ -1,6 +1,6 @@
 package br.com.americanas.polotech.model.entity;
 
-public class Produto {
+public abstract class Produto {
     private static Integer uid = 1;
     private Integer id;
     private String nome;
@@ -56,9 +56,10 @@ public class Produto {
 
     @Override
     public String toString() {
-        return  "[id]:" + id +
-                ", [nome]: '" + nome + '\'' +
-                ", [preco]: " + preco +
-                ", [Qtd no Carrinho]: " + qtdItens;
+        return "[id]:" + id + ", [nome]: '" + nome + '\'' + ", [preco]: " + preco + ", [Qtd em Estoque]: " + qtdItens;
+    }
+
+    public String imprimir() {
+        return "[" + id + "]     [" + nome + "]                         [" + preco + "] [" + qtdItens + "]";
     }
 }
