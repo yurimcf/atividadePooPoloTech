@@ -26,19 +26,19 @@ public class MenuLivrariaViualizar {
 
             switch (escolha){
                 case 1:
-                    EstoqueDAO.exibirTipo(1);
+                    EstoqueDAO.exibirPorCategoria(1);
                     break;
                 case 2:
-                    EstoqueDAO.exibirTipo(2);
+                    EstoqueDAO.exibirPorCategoria(2);
                     break;
                 case 3:
-                    EstoqueDAO.exibirTipo(3);
+                    EstoqueDAO.exibirPorCategoria(3);
                     break;
                 case 4:
-                    EstoqueDAO.exibirTipo(4);
+                    EstoqueDAO.exibirPorCategoria(4);
                     break;
                 case 5:
-                    EstoqueDAO.exibirTipo(5);
+                    EstoqueDAO.exibirPorCategoria(5);
                     break;
                 case 6:
                     EstoqueDAO.exibirTodos();

@@ -7,7 +7,6 @@ import java.util.Scanner;
 
 public class MenuLivrariaExcluir {
     public static boolean telaExcluir() {
-        Integer escolha;
         Scanner scr = new Scanner(System.in);
         boolean validador;
         do {

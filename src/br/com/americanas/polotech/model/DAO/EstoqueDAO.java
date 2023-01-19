@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.stream.Stream;
 
 public class EstoqueDAO {
-    private static final List<Produto> carrinho = new ArrayList<>();
     private static final List<AlbumDeMusica> listAlbumDeMusica = new ArrayList<>();
     private static final List<Brinquedo> listBrinquedos = new ArrayList<>();
     private static final List<Filme> listFilmes = new ArrayList<>();
@@ -52,7 +51,7 @@ public class EstoqueDAO {
         }
     }
 
-    public static void exibirTipo(Integer num) {
+    public static void exibirPorCategoria(Integer num) {
         if (num == 1) {
             listAlbumDeMusica.forEach(albumDeMusica -> System.out.println(albumDeMusica));
         }
