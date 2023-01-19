@@ -15,6 +15,10 @@ public class EstoqueDAO {
 
     private static List<Produto> listEstoque;
 
+    public static List<Produto> getListEstoque() {
+        return listEstoque;
+    }
+
     public static void inserirProduto(Produto produto) {
         if (produto instanceof AlbumDeMusica) {
             listAlbumDeMusica.add((AlbumDeMusica) produto);
@@ -43,7 +47,6 @@ public class EstoqueDAO {
         return null;
     }
 
-    // ta bom?
     public static void exibirTodos() {
         juntaLista();
         for (Produto prod : listEstoque) {
@@ -69,7 +72,7 @@ public class EstoqueDAO {
         }
     }
 
-    private static void juntaLista() {
+    public static void juntaLista() {
         listEstoque = new ArrayList<>();
         Stream.of(listAlbumDeMusica, listBrinquedos, listFilmes, listJogos, listLivros)
                 .forEach(listEstoque::addAll);
