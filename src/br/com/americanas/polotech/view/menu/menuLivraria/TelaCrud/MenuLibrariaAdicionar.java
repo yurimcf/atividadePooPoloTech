@@ -1,4 +1,4 @@
-package br.com.americanas.polotech.view.menu.menuLivraria;
+package br.com.americanas.polotech.view.menu.menuLivraria.TelaCrud;
 
 import br.com.americanas.polotech.model.DAO.EstoqueDAO;
 import br.com.americanas.polotech.model.entity.*;

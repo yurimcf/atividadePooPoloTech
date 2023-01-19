@@ -31,26 +31,26 @@ import br.com.americanas.polotech.view.menu.MenuInicial;
 public class UsaAppCompra {
     public static void main(String[] args) {
         EstoqueDAO.inserirProduto(new Jogo("GOD:Ragnarok", 299.99, 3, "Sony", "Ação e Aventura", "Santa Monica"));
-        EstoqueDAO.inserirProduto(new Livro("As Cronicas de Narnia", 55.0, 5, "Aventura", "Escritor0", "Editora9"));
-        EstoqueDAO.inserirProduto(new Filme("Tin tin", 24.99, 6, "Warner Bros", "Diretor1", "Ação e Aventura", "Produtor1"));
+        EstoqueDAO.inserirProduto(new Livro("As Cronicas de Narnia", 55.0, 3, "Aventura", "Escritor0", "Editora9"));
+        EstoqueDAO.inserirProduto(new Filme("Tin tin", 24.99, 3, "Warner Bros", "Diretor1", "Ação e Aventura", "Produtor1"));
         EstoqueDAO.inserirProduto(new Livro("Bulsola de Ouro", 39.99, 3, "Aventura", "Escritor2", "Editora1"));
-        EstoqueDAO.inserirProduto(new Livro("Código Limpo", 99.99, 2, "Universitário", "Robert Cecil Martin", "Alta Books"));
+        EstoqueDAO.inserirProduto(new Livro("Código Limpo", 99.99, 3, "Universitário", "Robert Cecil Martin", "Alta Books"));
         EstoqueDAO.inserirProduto(new Jogo("Red Dead Redemption 2", 239.99, 3, "Sony", "Ação e Aventura", "RockStar"));
-        EstoqueDAO.inserirProduto(new Jogo("God Of War", 69.99, 5, "Sony", "Ação e Aventura", "Santa Monica"));
-        EstoqueDAO.inserirProduto(new AlbumDeMusica("Special", 16.50, 5, "Lizzo", "Hip hop", "Sony"));
-        EstoqueDAO.inserirProduto(new Filme("Filme 1", 25.00, 10, "Warner Bros", "Diretor3", "Horror", "Produtor2"));
-        EstoqueDAO.inserirProduto(new AlbumDeMusica("Harry's House", 15.50, 5, "Harry Styles", "Funk pop", "Columbia"));
-        EstoqueDAO.inserirProduto(new Brinquedo("Barbie", 400.00, 2, "Boneco"));
+        EstoqueDAO.inserirProduto(new Jogo("God Of War", 69.99, 3, "Sony", "Ação e Aventura", "Santa Monica"));
+        EstoqueDAO.inserirProduto(new AlbumDeMusica("Special", 16.50, 3, "Lizzo", "Hip hop", "Sony"));
+        EstoqueDAO.inserirProduto(new Filme("Filme 1", 25.00, 3, "Warner Bros", "Diretor3", "Horror", "Produtor2"));
+        EstoqueDAO.inserirProduto(new AlbumDeMusica("Harry's House", 15.50, 3, "Harry Styles", "Funk pop", "Columbia"));
+        EstoqueDAO.inserirProduto(new Brinquedo("Barbie", 400.00, 3, "Boneco"));
 
         boolean iniciar = true;
-        boolean Fechar = false;
+        boolean fechar = false;
 
-        while (Fechar != true) {
+        while (fechar != true) {
             if (iniciar) {
                 iniciar = MenuInicial.menuInicial();
                 if (!iniciar) {
                     System.out.println("Saindo da Livraria");
-                    Fechar = true;
+                    fechar = true;
                 }
             }
         }

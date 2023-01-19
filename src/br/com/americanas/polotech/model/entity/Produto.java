@@ -1,6 +1,6 @@
 package br.com.americanas.polotech.model.entity;
 
-public abstract class Produto {
+public class Produto {
     private static Integer uid = 1;
     private Integer id;
     private String nome;
@@ -10,6 +10,13 @@ public abstract class Produto {
 
     public Produto(String nome, Double preco, Integer qtdItens) {
         this.id = uid++;
+        this.nome = nome;
+        this.preco = preco;
+        this.qtdItens = qtdItens;
+    }
+
+    public Produto(Integer id, String nome, Double preco, Integer qtdItens) {
+        this.id = id;
         this.nome = nome;
         this.preco = preco;
         this.qtdItens = qtdItens;
@@ -52,6 +59,6 @@ public abstract class Produto {
         return  "[id]:" + id +
                 ", [nome]: '" + nome + '\'' +
                 ", [preco]: " + preco +
-                ", [Qtd em Estoque]: " + qtdItens;
+                ", [Qtd no Carrinho]: " + qtdItens;
     }
 }
