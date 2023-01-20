@@ -2,8 +2,11 @@ package br.com.americanas.polotech.model.DAO;
 
 import br.com.americanas.polotech.model.entity.*;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class CaixaDAO {
     private static Double saldoEmCaixa = 0.00;
@@ -23,7 +26,7 @@ public class CaixaDAO {
             if (prodRef.getQtdItens() == produto.getQtdItens()) {
                 System.out.println("================================");
                 System.out.println("Não pode adicionar mais Itens");
-            }else {
+            } else {
                 prodRef.setQtdItens(prodRef.getQtdItens() + 1);
             }
         }
@@ -56,32 +59,68 @@ public class CaixaDAO {
         return true;
     }
 
-    public static void calculaSaldo(Double valor) {
+    public static void adicionarSaldo(Double valor) {
         saldoEmCaixa += valor;
     }
 
+    public static Double precoTotal() {
+        List<Produto> fList = new ArrayList<>(carrinhoTemp.values());
+        List<Double> valorTotalItem = fList.stream()
+                .map(produto -> produto.getQtdItens() * produto.getPreco())
+                .collect(Collectors.toList());
+        Double valorTotal = valorTotalItem.stream().reduce((double) 0, Double::sum);
+
+        return valorTotal;
+    }
+
+    public static boolean finalizaCompra() {
+        Double valorTotal = precoTotal();
+        if (valorTotal > saldoEmCaixa) {
+            return false;
+        } else {
+            saldoEmCaixa = saldoEmCaixa - valorTotal;
+            atualizarEstoque();
+            return true;
+        }
+    }
+
+    private static void atualizarEstoque() {
+        List<Produto> fList = new ArrayList<>(carrinhoTemp.values());
+        List<Produto> estoqueList = EstoqueDAO.getListEstoque();
+
+        Integer qtdAtualizado;
+        fList.stream().filter(estoqueList::contains).forEach(System.out::println);
+
+//        for (Produto produto : fList) {
+//            Produto prod = estoqueList.get(produto.getId());
+//            if(prod.getId() == produto.getId()){
+//                qtdAtualizado = prod.getQtdItens() - produto.getQtdItens();
+//                EstoqueDAO.alterarQtd(prod.getId(), qtdAtualizado);
+//            }
+//        }
+    }
 
     private static Produto verificaTipo(Produto produto) {
         Produto temp = null;
         if (produto instanceof AlbumDeMusica) {
             temp = new AlbumDeMusica(produto.getId(),
-                    produto.getNome(), produto.getPreco(),1);
+                    produto.getNome(), produto.getPreco(), 1);
         }
         if (produto instanceof Brinquedo) {
             temp = new Brinquedo(produto.getId(),
-                    produto.getNome(), produto.getPreco(),1);
+                    produto.getNome(), produto.getPreco(), 1);
         }
         if (produto instanceof Filme) {
             temp = new Filme(produto.getId(),
-                    produto.getNome(), produto.getPreco(),1);
+                    produto.getNome(), produto.getPreco(), 1);
         }
         if (produto instanceof Jogo) {
             temp = new Jogo(produto.getId(),
-                    produto.getNome(), produto.getPreco(),1);
+                    produto.getNome(), produto.getPreco(), 1);
         }
         if (produto instanceof Livro) {
             temp = new Livro(produto.getId(),
-                    produto.getNome(), produto.getPreco(),1);
+                    produto.getNome(), produto.getPreco(), 1);
         }
         return temp;
     }
