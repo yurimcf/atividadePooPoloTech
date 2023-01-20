@@ -89,15 +89,14 @@ public class CaixaDAO {
         List<Produto> estoqueList = EstoqueDAO.getListEstoque();
 
         Integer qtdAtualizado;
-        fList.stream().filter(estoqueList::contains).forEach(System.out::println);
-
-//        for (Produto produto : fList) {
-//            Produto prod = estoqueList.get(produto.getId());
-//            if(prod.getId() == produto.getId()){
-//                qtdAtualizado = prod.getQtdItens() - produto.getQtdItens();
-//                EstoqueDAO.alterarQtd(prod.getId(), qtdAtualizado);
-//            }
-//        }
+        for (int i = 0; i < fList.size(); i++) {
+            for (int j = 0; j < estoqueList.size(); j++) {
+                if (fList.get(i).getId() == estoqueList.get(j).getId()) {
+                    Integer qtdAtual = estoqueList.get(j).getQtdItens() - fList.get(i).getQtdItens();
+                    EstoqueDAO.alterarQtd(fList.get(i).getId(), qtdAtual);
+                }
+            }
+        }
     }
 
     private static Produto verificaTipo(Produto produto) {
