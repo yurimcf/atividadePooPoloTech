@@ -1,6 +1,6 @@
 package br.com.americanas.polotech.model.entity;
 
-public class Filme extends Produto{
+public class Filme extends Produto {
     private String estudio;
     private String diretor;
     private String genero;
@@ -16,38 +16,6 @@ public class Filme extends Produto{
 
     public Filme(Integer id, String nome, Double preco, Integer qtdItens) {
         super(id, nome, preco, qtdItens);
-    }
-
-    public String getEstudio() {
-        return estudio;
-    }
-
-    public void setEstudio(String estudio) {
-        this.estudio = estudio;
-    }
-
-    public String getDiretor() {
-        return diretor;
-    }
-
-    public void setDiretor(String diretor) {
-        this.diretor = diretor;
-    }
-
-    public String getGenero() {
-        return genero;
-    }
-
-    public void setGenero(String genero) {
-        this.genero = genero;
-    }
-
-    public String getProdutor() {
-        return produtor;
-    }
-
-    public void setProdutor(String produtor) {
-        this.produtor = produtor;
     }
 
     @Override

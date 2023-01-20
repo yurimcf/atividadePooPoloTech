@@ -1,6 +1,6 @@
 package br.com.americanas.polotech.model.entity;
 
-public class AlbumDeMusica extends Produto{
+public class AlbumDeMusica extends Produto {
     private String compositor;
     private String genero;
     private String selos;
@@ -14,30 +14,6 @@ public class AlbumDeMusica extends Produto{
 
     public AlbumDeMusica(Integer id, String nome, Double preco, Integer qtdItens) {
         super(id, nome, preco, qtdItens);
-    }
-
-    public String getCompositor() {
-        return compositor;
-    }
-
-    public void setCompositor(String compositor) {
-        this.compositor = compositor;
-    }
-
-    public String getGenero() {
-        return genero;
-    }
-
-    public void setGenero(String genero) {
-        this.genero = genero;
-    }
-
-    public String getSelos() {
-        return selos;
-    }
-
-    public void setSelos(String selos) {
-        this.selos = selos;
     }
 
     @Override

@@ -20,7 +20,7 @@ Você deve ser capaz de ver quantos itens de um tipo específico existem no esto
 
 Você deve ser capaz de ver a listagem completa dos itens em estoque. --> (check)
 Você deve ser capaz de ver a listagem dos itens em estoque por categoria(tipo de item). --> (CHECK)
-Você deve ser capaz de realizar a operação de compra, ao realizar esta operação --> WIP
+Você deve ser capaz de realizar a operação de compra, ao realizar esta operação --> (Check)
 os produtos comprados são removidos do estoque e o dinheiro pago deve ser adicionado ao caixa.
  */
 

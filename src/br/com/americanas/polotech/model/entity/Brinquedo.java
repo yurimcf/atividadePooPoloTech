@@ -12,14 +12,6 @@ public class Brinquedo extends Produto {
         super(id, nome, preco, qtdItens);
     }
 
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-
     @Override
     public String toString() {
         return "Brinquedo {" +

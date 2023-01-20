@@ -16,29 +16,6 @@ public class Livro extends Produto {
         super(id, nome, preco, qtdItens);
     }
 
-    public String getGenero() {
-        return genero;
-    }
-
-    public void setGenero(String genero) {
-        this.genero = genero;
-    }
-
-    public String getEscritor() {
-        return escritor;
-    }
-
-    public void setEscritor(String escritor) {
-        this.escritor = escritor;
-    }
-
-    public String getEditoda() {
-        return editoda;
-    }
-
-    public void setEditoda(String editoda) {
-        this.editoda = editoda;
-    }
 
     @Override
     public String toString() {

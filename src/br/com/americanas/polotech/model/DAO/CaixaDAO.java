@@ -88,7 +88,6 @@ public class CaixaDAO {
         List<Produto> fList = new ArrayList<>(carrinhoTemp.values());
         List<Produto> estoqueList = EstoqueDAO.getListEstoque();
 
-        Integer qtdAtualizado;
         for (int i = 0; i < fList.size(); i++) {
             for (int j = 0; j < estoqueList.size(); j++) {
                 if (fList.get(i).getId() == estoqueList.get(j).getId()) {

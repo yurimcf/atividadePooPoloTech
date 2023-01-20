@@ -78,6 +78,7 @@ public class EstoqueDAO {
         Stream.of(listAlbumDeMusica, listBrinquedos, listFilmes, listJogos, listLivros)
                 .forEach(listEstoque::addAll);
     }
+
     private static List<Produto> lista() {
         listEstoque = new ArrayList<>();
         Stream.of(listAlbumDeMusica, listBrinquedos, listFilmes, listJogos, listLivros)
