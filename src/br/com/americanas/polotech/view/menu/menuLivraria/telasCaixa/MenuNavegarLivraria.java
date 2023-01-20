@@ -1,9 +1,9 @@
-package br.com.americanas.polotech.view.menu.menuLivraria;
+package br.com.americanas.polotech.view.menu.menuLivraria.telasCaixa;
 
-import br.com.americanas.polotech.view.menu.menuLivraria.TelaCrud.MenuLibrariaAdicionar;
-import br.com.americanas.polotech.view.menu.menuLivraria.TelaCrud.MenuLivrariaAlterar;
-import br.com.americanas.polotech.view.menu.menuLivraria.TelaCrud.MenuLivrariaExcluir;
-import br.com.americanas.polotech.view.menu.menuLivraria.TelaCrud.MenuLivrariaViualizar;
+import br.com.americanas.polotech.view.menu.menuLivraria.telasEstoque.MenuLibrariaAdicionar;
+import br.com.americanas.polotech.view.menu.menuLivraria.telasEstoque.MenuLivrariaAlterar;
+import br.com.americanas.polotech.view.menu.menuLivraria.telasEstoque.MenuLivrariaExcluir;
+import br.com.americanas.polotech.view.menu.menuLivraria.telasEstoque.MenuLivrariaViualizar;
 
 import java.util.Scanner;
 

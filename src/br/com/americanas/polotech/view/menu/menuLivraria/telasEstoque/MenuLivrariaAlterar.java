@@ -1,4 +1,4 @@
-package br.com.americanas.polotech.view.menu.menuLivraria.TelaCrud;
+package br.com.americanas.polotech.view.menu.menuLivraria.telasEstoque;
 
 import br.com.americanas.polotech.model.DAO.EstoqueDAO;
 import br.com.americanas.polotech.model.entity.Produto;
@@ -45,7 +45,7 @@ public class MenuLivrariaAlterar {
                     System.out.println("Digite a nova quantidade");
                     Integer qtd = src.nextInt();
 
-                    EstoqueDAO.alterarProduto(id, qtd);
+                    EstoqueDAO.alterarQtd(id, qtd);
                     break;
                 case 3:
                     validador = false;

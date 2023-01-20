@@ -60,6 +60,6 @@ public abstract class Produto {
     }
 
     public String imprimir() {
-        return "[" + id + "]     [" + nome + "]                         [" + preco + "] [" + qtdItens + "]";
+        return "[" + id + "]    [" + nome + "]                          [" + preco + "]  [" + qtdItens + "]";
     }
 }
