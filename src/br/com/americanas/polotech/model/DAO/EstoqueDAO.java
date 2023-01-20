@@ -16,6 +16,7 @@ public class EstoqueDAO {
     private static List<Produto> listEstoque;
 
     public static List<Produto> getListEstoque() {
+        listEstoque = lista();
         return listEstoque;
     }
 
@@ -77,6 +78,12 @@ public class EstoqueDAO {
         Stream.of(listAlbumDeMusica, listBrinquedos, listFilmes, listJogos, listLivros)
                 .forEach(listEstoque::addAll);
     }
+    private static List<Produto> lista() {
+        listEstoque = new ArrayList<>();
+        Stream.of(listAlbumDeMusica, listBrinquedos, listFilmes, listJogos, listLivros)
+                .forEach(listEstoque::addAll);
+        return listEstoque;
+    }
 
     public static boolean removerProduto(int id) {
         juntaLista();
@@ -117,7 +124,7 @@ public class EstoqueDAO {
         return true;
     }
 
-    public static boolean alterarProduto(int id, Integer qtd) {
+    public static boolean alterarQtd(int id, Integer qtd) {
         juntaLista();
         if (id != -1) {
             listEstoque.forEach(produto -> {
